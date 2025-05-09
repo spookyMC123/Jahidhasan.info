@@ -1,0 +1,131 @@
+body {
+  margin: 0;
+  font-family: 'Samsung One', sans-serif;
+  background: #fff;
+  color: #000;
+  scroll-behavior: smooth;
+}
+
+header {
+  background: #000;
+  color: #fff;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  animation: slide-down 1s ease-out;
+}
+
+.logo {
+  margin: 0;
+  font-size: 24px;
+}
+
+.big-name {
+  font-size: 36px;
+  font-weight: bold;
+  animation: name-pop 1.5s ease-in-out;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #ff9800;
+}
+
+.section {
+  padding: 60px 40px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease;
+}
+
+.section.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.info-cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.card {
+  background: #f2f2f2;
+  padding: 30px;
+  width: 260px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  transition: transform 0.4s, background 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.03);
+  background: #e0e0e0;
+}
+
+footer {
+  background: #000;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 16px;
+  animation: slide-up 1s ease-out;
+}
+
+@keyframes name-pop {
+  0% { opacity: 0; transform: scale(0.8); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slide-down {
+  from { transform: translateY(-100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slide-up {
+  from { transform: translateY(100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@media (max-width: 600px) {
+  .big-name {
+    font-size: 28px;
+    text-align: center;
+    width: 100%;
+  }
+
+  nav ul {
+    justify-content: center;
+    margin-top: 10px;
+  }
+}
